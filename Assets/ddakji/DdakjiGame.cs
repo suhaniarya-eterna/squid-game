@@ -18,7 +18,7 @@ public class DdakjiGame : MonoBehaviour
 
     public Camera cam;
     public GameObject stuff;
-
+    public GameObject stuff2;
     public Image flashImage;
 
     public int playerMoney = 0;
@@ -36,8 +36,7 @@ public class DdakjiGame : MonoBehaviour
 
     void Start()
     {
-        stuff.SetActive(false);
-
+       
         playertileanim = playerTile.GetComponent<Animator>();
         enemytileanim = enemyTile.GetComponent<Animator>();
 
@@ -197,6 +196,12 @@ public class DdakjiGame : MonoBehaviour
 
     void Update()
     {
+        if (isPlaying)
+        {
+             stuff.SetActive(false);
+             stuff2.SetActive(false);
+
+        }
         if (playerMoney >= 1000 && !isPlaying)
         {
             isPlaying = true;
