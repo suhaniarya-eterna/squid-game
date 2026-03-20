@@ -5,9 +5,60 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/scene/island.unity
+    guid: f4f6b146d720af04eabc42f6b41e487b
   - enabled: 1
-    path: Assets/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    path: Assets/scene/city.unity
+    guid: 821c57271b22d9a4c9352d11409b2eae
+  - enabled: 1
+    path: Assets/scene/room.unity
+    guid: 8e11c9f159f5ba54ab5de5762a55e377
+  - enabled: 1
+    path: Assets/scene/RED_Light.unity
+    guid: cadd5cc2b65061746a372f97115b490d
+  - enabled: 1
+    path: Assets/scene/control room.unity
+    guid: 40b751e029139ad4593d55a186b56169
+  - enabled: 1
+    path: Assets/scene/honeycomb.unity
+    guid: ac7dd472711828548840fafa54e8b6af
+  - enabled: 1
+    path: Assets/scene/glassbridge.unity
+    guid: 6f8d3a28d4804764ba52f1fcd7aee45e
+  - enabled: 1
+    path: Assets/scene/frontmans office.unity
+    guid: 0af862f8cbe6807439c3c349bff37d25
+  - enabled: 1
+    path: Assets/scene/tug of war.unity
+    guid: 8e26a6230461d9a40b4b63c487255a78
+  - enabled: 1
+    path: Assets/scene/marbles.unity
+    guid: 7253572f24fd0194bb16572c24cab6db
+  - enabled: 1
+    path: Assets/scene/flip2.unity
+    guid: d66619af7709373459b25495864203bf
+  - enabled: 1
+    path: Assets/scene/jumprope.unity
+    guid: f2d31305c0742d740903dc5f85053979
+  - enabled: 1
+    path: Assets/scene/vip room.unity
+    guid: 76f7fba4f6f0f4a4e8f9a66bdb975dce
+  - enabled: 1
+    path: Assets/scene/mingle.unity
+    guid: 1f8a36e819fbe0c42802e285608c697c
+  - enabled: 1
+    path: Assets/scene/staircase.unity
+    guid: 48bdd2d9711754e4a937dbef4ee1330c
+  - enabled: 1
+    path: Assets/scene/hideand seek.unity
+    guid: 845781eef616c75468b9713dcd8302a3
+  - enabled: 1
+    path: Assets/scene/restroom.unity
+    guid: 0e5df47dae43bef4989b987a8a3d2b9b
+  - enabled: 1
+    path: Assets/scene/catchsquid.unity
+    guid: 8381d3605ffca3744a6ac342f9143c82
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   m_UseUCBPForAssetBundles: 0
