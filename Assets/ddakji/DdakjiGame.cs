@@ -83,22 +83,18 @@ public class DdakjiGame : MonoBehaviour
 
         resultText.text = "...";
 
-        // 🎬 PLAYER FLIP
         playertileanim.SetTrigger("Flip");
 
         yield return new WaitForSeconds(0.15f);
 
-        // 🎬 ENEMY REACT
         enemytileanim.SetTrigger("enemyflip");
 
-        // ⏳ LET ANIMATION PLAY
         yield return new WaitForSeconds(0.6f);
 
-        // 🐢 SLOW MOTION BEFORE IMPACT
         Time.timeScale = 0.4f;
         yield return new WaitForSecondsRealtime(0.15f);
 
-        // 💥 SLAP + FLASH
+
         yield return StartCoroutine(SlapImpact());
         yield return StartCoroutine(ScreenFlash());
 
@@ -106,19 +102,18 @@ public class DdakjiGame : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
 
-        // 🎯 RESULT
         if (playerWon)
         {
             playerMoney += 100;
             money.text = "Money: " + playerMoney;
 
-            resultText.text = "You won… AND STILL GOT SLAPPED 💀";
+            resultText.text = "You won… AND STILL GOT SLAPPED ";
 
             playerTile.transform.localPosition = new Vector3(0, 0.02f, 0.45f);
         }
         else
         {
-            resultText.text = "You lost AND got slapped 😭";
+            resultText.text = "You lost AND got slapped ";
         }
 
         yield return new WaitForSeconds(0.6f);

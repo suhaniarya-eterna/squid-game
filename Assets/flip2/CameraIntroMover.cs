@@ -5,7 +5,7 @@ public class CameraIntroMover : MonoBehaviour
 {
     private CinemachineSplineDolly splineDolly;
     public float duration = 8f;
-    public GameObject gameObjects; // drag player parent here
+    public GameObject gameObjects; 
 
     private float elapsed = 0f;
     private bool completed = false;
