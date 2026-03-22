@@ -23,6 +23,8 @@
   - separate environments
   - models and assets
   - complete gameplay systems
+ 
+  - The game was primarily build for mobile and desktop and was later switched to web
 
 - Due to constraints:
   - GitHub has a 100MB file limit per file and ~2GB total limit
