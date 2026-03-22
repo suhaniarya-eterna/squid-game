@@ -25,6 +25,7 @@
   - complete gameplay systems
  
   - The game was primarily build for mobile and desktop and was later switched to web
+  - the project was primarily high graphic render HDRP , later converted to lower graphics to accommodate web platform 
 
 - Due to constraints:
   - GitHub has a 100MB file limit per file and ~2GB total limit
