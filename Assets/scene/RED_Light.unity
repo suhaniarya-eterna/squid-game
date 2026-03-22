@@ -2996,11 +2996,10 @@ MonoBehaviour:
   tauntText: {fileID: 2699332249099403520}
   textFadeDuration: 0.4
   taunts:
-  - First game. Ddakji.
-  - 'Get 1000$ to move to next level '
-  - Flip the tile. If it turns, you win.
-  - "If it doesn\u2019t\u2026 you\u2019ll understand."
-  - "It\u2019s not the game. It\u2019s you."
+  - Move I dare you..
+  - Too slow or too scared?
+  - "Go on\u2026 mess it up."
+  - "Don\u2019t blink."
   timeBetweenTaunts: 3.5
 --- !u!4 &2146415889854349054
 Transform:
@@ -8655,7 +8654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23afee30f333e4c4480d4c39ce3eac76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraIntroMover
-  duration: 22
+  duration: 18
   gameObjects: {fileID: 1012002848}
 --- !u!4 &7941279540068323351
 Transform:
