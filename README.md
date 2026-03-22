@@ -1,133 +1,91 @@
-# 🦑 Rage Game: Squid Chaos
+## What is this game
 
-A chaotic, rage-inducing remake of Squid Game built in Unity — where the rules don’t just test skill… they **betray you**.
+- This is a rage-based Squid Game-inspired project built in Unity
+- It combines multiple mini-games into a single chaotic experience
+- Mechanics are intentionally unpredictable to create frustration-driven gameplay
 
-> “You thought you understood the game. The game understood you better.”
+- Included mini-games:
+  - Red Light, Green Light
+  - Ddakji
+  - Room Vote
+  - Marbles
+  - Snakes and Ladders
 
----
+- Focus:
+  - controlled unfairness
+  - reaction-based gameplay
+  - player psychology
 
-## 🎮 About the Game
 
-This is not a normal Squid Game clone.
+## Development Note
 
-This is a **ragebait version** where:
+- This project originally included multiple fully developed scenes with:
+  - separate environments
+  - models and assets
+  - complete gameplay systems
 
-* rules change unexpectedly
-* “safe” choices become traps
-* and winning feels… suspicious
+- Due to constraints:
+  - GitHub has a 100MB file limit per file and ~2GB total limit
+  - WebGL requires lightweight builds for performance
 
-Every mini-game is designed to **push the player just enough to snap** 😈
+- As a result:
+  - heavy assets, scenes, and related logic were removed from this repository
+  - only essential logic and systems are included
 
----
+- This means:
+  - a significant portion of development work is not visible in this repo
 
-## 🕹️ Playable Mini-Games
+- If required:
+  - proof or earlier versions can be shared on request
+  - a full version will be available later for desktop/mobile
 
-* 🔴 **Red Light, Green Light (Rage Edition)**
-  Yellow means death. Timing lies.
 
-* 🌉 **Glass Bridge**
-  Safe tiles… until they’re not.
+## AI Usage Disclosure
 
-* 🍯 **Dalgona Challenge**
-  Perfect cuts still break.
+- AI was used only within VS Code (built-in tools) for:
+  - syntax assistance
+  - debugging suggestions
+  - minor implementation help
 
-* 🎲 **Marbles (Guess the Count)**
-  It’s not even marbles anymore. It’s squares. And lies.
+- All core work was done by me:
+  - game design
+  - scene creation
+  - system architecture
+  - gameplay logic integration
 
-* 🪢 **Tug of War**
-  Strength doesn’t guarantee survival.
+- The overall structure and behavior of the game are fully human-designed and controlled
 
-* 🎵 **Mingle**
-  Music stops. Panic starts.
 
-* 🕵️ **Hide and Seek**
-  Sometimes hiding doesn’t help.
+## Repository Scope
 
-* 🏃 **Catch Squid**
-  Run. Dodge. Don’t get caught.
+- This repository includes:
+  - core gameplay scripts (C#)
+  - logic required for the WebGL version
 
-* 🎯 **Ddakji**
-  Flip the tile… or don’t. It’s not always up to you.
+- It does not include:
+  - large models
+  - heavy textures
+  - full scene files
 
----
+- These were excluded due to size limitations
 
-## 😈 Core Concept
 
-This game is built around **controlled unfairness**.
+## Commits Note
 
-* Randomness is intentional
-* Mechanics are slightly deceptive
-* Players are meant to feel:
+- The number of commits is lower than expected because:
+  - I am not used to using Git extensively for game development
+  - most work was done inside Unity before structured version control
 
-  * confident
-  * confused
-  * betrayed
+- A significant amount of time was spent building systems and scenes, even if not fully reflected in commit history
 
-All within seconds.
+- For any clarification, feel free to reach out
 
----
 
-## 🛠️ Built With
+## Play the Game
 
-* Unity (C#)
-* Custom game logic systems
-* Physics + trigger-based mechanics
-* A lot of intentional chaos
+- WebGL build: (Add your Vercel link here)
 
----
-
-## 🎯 How to Play
-
-* Move: `WASD`
-* Jump: `Space`
-* Interact / Actions: `E` or Mouse
-* Survive each mini-game
-* Expect nothing to behave normally
-
----
-
-## 🚀 Project Goal
-
-To explore:
-
-* game design psychology
-* frustration-driven engagement
-* rapid prototyping of multiple mechanics
-
----
-
-## 📦 Project Structure
-
-```text
-Assets/
-├── Scripts/
-├── Scenes/
-├── Prefabs/
-├── UI/
-```
-
-Heavy assets are excluded from this repo for size optimization.
-
----
-
-## ⚠️ Disclaimer
-
-This game is intentionally frustrating.
-Rage is not a bug. It’s a feature.
-
----
-
-## 👩‍💻 Developer
-
-Built by **Suhani Arya**
-Game developer exploring chaos, AI, and human-centered design.
-
----
-
-## ⭐ If you liked it
-
-Give the repo a star ⭐
-Or try to beat the game without rage quitting.
-
-Good luck.
-You’ll need it.
+- Notes:
+  - This is my first WebGL deployment, so minor glitches may occur
+  - Performance improvements are ongoing
+  - The experience will be refined further over time
