@@ -1,7 +1,12 @@
 using UnityEngine;
+using TMPro;
+using System.Collections;
 
 public class kill : MonoBehaviour
 {
+    public TextMeshProUGUI taunt;
+    public Animator dollAnimator;
+
     public enum LightState
     {
         Green,
@@ -12,25 +17,34 @@ public class kill : MonoBehaviour
 
     float timer;
 
+    public bool canKill = false; 
+
     void Start()
     {
-        SetState(LightState.Green);
+        StartCoroutine(StateLoop());
     }
 
-    void Update()
+    IEnumerator StateLoop()
     {
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
+        while (true)
         {
-            if (currentState == LightState.Green)
-            {
-                SetState(LightState.Red);
-            }
-            else
-            {
-                SetState(LightState.Green);
-            }
+     
+            SetState(LightState.Red);
+            canKill = false;
+
+            yield return new WaitForSeconds(Random.Range(3f, 4f));
+
+        
+            taunt.text = "..." ;
+            yield return new WaitForSeconds(0.6f);
+
+            SetState(LightState.Green);
+
+       
+            yield return new WaitForSeconds(0.5f);
+            canKill = true;
+
+            yield return new WaitForSeconds(Random.Range(2.5f, 3.5f));
         }
     }
 
@@ -40,13 +54,13 @@ public class kill : MonoBehaviour
 
         if (newState == LightState.Green)
         {
-            timer = Random.Range(3f, 6f);
-            Debug.Log("GREEN - Move!");
+            taunt.text = "GREEN - DON'T MOVE!";
+            dollAnimator.SetBool("IsGreen", true);
         }
-        else if (newState == LightState.Red)
+        else
         {
-            timer = Random.Range(1f, 4f); 
-            Debug.Log("RED - Don't Move!");
+            taunt.text = "RED - MOVE!";
+            dollAnimator.SetBool("IsGreen", false);
         }
     }
 }

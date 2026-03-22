@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MarbleGameManager : MonoBehaviour
 {
     int hiddenSquares;
+    public TextMeshProUGUI taunt;
 
     public int correctGuesses = 0;
     public int wrongGuesses = 0;
@@ -12,10 +14,16 @@ public class MarbleGameManager : MonoBehaviour
     public GameObject marblePrefab;
     public GameObject fakePrefab;
 
+    private bool active = false;
+    public GameObject stuff;
+
     [Header("Box Settings")]
     public Transform spawnArea;
-    public Vector3 spawnSize = new Vector3(2f, 2f, 2f);
     public Transform lid;
+
+    [Header("Grid Settings")]
+    public float spacing = 0.4f;
+    public int perRow = 2;
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
 
@@ -28,15 +36,9 @@ public class MarbleGameManager : MonoBehaviour
     {
         ClearOld();
 
-        int totalObjects = Random.Range(1, 6); 
+        int totalObjects = Random.Range(1, 6); // max 5
 
-        for (int i = 0; i < totalObjects - 1; i++)
-        {
-            Spawn(marblePrefab);
-        }
-
-        
-        Spawn(fakePrefab);
+        SpawnObjects(totalObjects);
 
         hiddenSquares = totalObjects - 1;
 
@@ -45,17 +47,39 @@ public class MarbleGameManager : MonoBehaviour
         Debug.Log("New round started.");
     }
 
-    void Spawn(GameObject prefab)
+    void SpawnObjects(int totalObjects)
+{
+    int index = 0;
+
+    for (int i = 0; i < totalObjects; i++)
     {
+        int row = index / perRow;
+        int col = index % perRow;
+
+        // 🔥 controlled height (no skyscraper)
+        float height = row * (spacing * 0.4f); 
+
         Vector3 pos = spawnArea.position + new Vector3(
-            Random.Range(-spawnSize.x / 2, spawnSize.x / 2),
-            Random.Range(-spawnSize.y / 2, spawnSize.y / 2),
-            Random.Range(-spawnSize.z / 2, spawnSize.z / 2)
+            (col - (perRow - 1) / 2f) * spacing,
+            height,
+            0
         );
 
-        GameObject obj = Instantiate(prefab, pos, Random.rotation);
+        // slight randomness so it doesn't look robotic
+        pos += new Vector3(
+            Random.Range(-0.05f, 0.05f),
+            0,
+            Random.Range(-0.05f, 0.05f)
+        );
+
+        GameObject prefab = (i == totalObjects - 1) ? fakePrefab : marblePrefab;
+
+        GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
         spawnedObjects.Add(obj);
+
+        index++;
     }
+}
 
     void ClearOld()
     {
@@ -70,40 +94,53 @@ public class MarbleGameManager : MonoBehaviour
     {
         Debug.Log("Player guessed: " + guess);
 
-        OpenLid(); 
+        OpenLid();
 
         if (guess == hiddenSquares)
         {
             correctGuesses++;
-            Debug.Log(" Correct! Total correct guesses: " + correctGuesses);
+            taunt.text = "Correct! Total correct guesses: " + correctGuesses;
         }
         else
         {
             wrongGuesses++;
-            Debug.Log("Wrong! (You counted the fake, didn’t you?)");
+            taunt.text = "Wrong! (You counted the fake, didn’t you?)\nTotal wrong guesses: " + wrongGuesses;
         }
 
         CheckWin();
 
-        Invoke(nameof(EnemyHideSquares), 2f);  }
+        Invoke(nameof(EnemyHideSquares), 2f);
+    }
 
     void CheckWin()
     {
         if (correctGuesses >= 3)
         {
-            Debug.Log(" Player wins! 3 correct guesses achieved.");
+            taunt.text = "You guessed right! Congrats on surviving this.";
         }
     }
 
     void OpenLid()
-    {
-        if (lid != null)
-            lid.localRotation = Quaternion.Euler(-110f, 0, 0);
+     { 
+        if (lid != null) 
+     lid.localPosition = new Vector3(-15f, 0, 0);
+      } 
+    
+    void CloseLid() 
+    { if (lid != null) 
+    lid.localPosition = new Vector3(189.429f, 7.220133f, 180.813f); 
     }
 
-    void CloseLid()
+    private void Update()
     {
-        if (lid != null)
-            lid.localRotation = Quaternion.Euler(0, 0, 0);
+        if (gameObject.activeSelf)
+        {
+            active = true;
+        }
+
+        if (active)
+        {
+            stuff.SetActive(false);
+        }
     }
 }

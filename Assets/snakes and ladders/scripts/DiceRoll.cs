@@ -1,16 +1,23 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 
 public class DiceRoll : MonoBehaviour
 {
     public PlayerMovement player;
+    public GameObject stuff;
 
-    void Update()
+    void Start()
     {
-         if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (gameObject.activeSelf)
         {
-            player.RollDice();
+            stuff.SetActive(false);
         }
+    }
+
+    public void RollDiceButton()
+    {
+        
+        if (player.IsMoving()) return;
+
+        player.RollDice();
     }
 }
